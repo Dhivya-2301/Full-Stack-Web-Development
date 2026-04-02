@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<head>
+  <title>JavaScript Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .section {
+      background: #f4f4f4;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #slider {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    #counterValue {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Mini Tasks</h1>
+
+  <!-- 1. Change Background Color -->
+  <div class="section">
+    <h2>1. Change Background Color</h2>
+    <button onclick="changeBgColor()">Change Background</button>
+  </div>
+
+  <!-- 2. Live Text Display -->
+  <div class="section">
+    <h2>2. Live Text Display</h2>
+    <input type="text" id="liveInput" placeholder="Type something..." onkeyup="showText()" />
+    <p>You typed: <span id="outputText"></span></p>
+  </div>
+
+  <!-- 3. Show/Hide Password -->
+  <div class="section">
+    <h2>3. Show / Hide Password</h2>
+    <input type="password" id="passwordField" placeholder="Enter password" />
+    <br>
+    <button onclick="togglePassword()">Show / Hide</button>
+  </div>
+
+  <!-- 4. Image Slider -->
+  <div class="section">
+    <h2>4. Simple Image Slider</h2>
+    <img id="slider" src="https://picsum.photos/id/1015/300/200" alt="slider image">
+    <br>
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+  </div>
+
+  <!-- 5. Counter -->
+  <div class="section">
+    <h2>5. Counter</h2>
+    <div id="counterValue">0</div>
+    <button onclick="decreaseCounter()">- Decrement</button>
+    <button onclick="increaseCounter()">+ Increment</button>
+  </div>
+
+  <script>
+    // 1. Change background color
+    function changeBgColor() {
+      const colors = ["#ffcccc", "#ccffcc", "#ccccff", "#fff0b3", "#ffd9e6"];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      document.body.style.backgroundColor = colors[randomIndex];
+    }
+
+    // 2. Live text display
+    function showText() {
+      const inputValue = document.getElementById("liveInput").value;
+      document.getElementById("outputText").textContent = inputValue;
+    }
+
+    // 3. Show/Hide password
+    function togglePassword() {
+      const passwordField = document.getElementById("passwordField");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    }
+
+    // 4. Image slider
+    const images = [
+      "https://picsum.photos/id/1015/300/200",
+      "https://picsum.photos/id/1016/300/200",
+      "https://picsum.photos/id/1025/300/200",
+      "https://picsum.photos/id/1035/300/200"
+    ];
+
+    let currentImageIndex = 0;
+
+    function showImage() {
+      document.getElementById("slider").src = images[currentImageIndex];
+    }
+
+    function nextImage() {
+      currentImageIndex++;
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
+      showImage();
+    }
+
+    function prevImage() {
+      currentImageIndex--;
+      if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      }
+      showImage();
+    }
+
+    // 5. Counter
+    let count = 0;
+
+    function increaseCounter() {
+      count++;
+      document.getElementById("counterValue").textContent = count;
+    }
+
+    function decreaseCounter() {
+      count--;
+      document.getElementById("counterValue").textContent = count;
+    }
+  </script>
+
+</body>
+</html>
