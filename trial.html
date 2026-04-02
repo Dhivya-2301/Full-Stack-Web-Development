@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+    <title>Tasty Bites</title>
+
+    <style>
+        
+        * {
+
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #fff1eb, #ace0f9);
+            min-height: 100vh;
+        }
+
+        
+        header {
+            background-color: #ea4343;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+        .diff{
+            color:#f9cdcd;
+        }
+
+        header p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        
+        
+        .food-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 50px;
+        }
+
+       
+        .food-card {
+            background-color: rgb(243, 231, 231);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .food-img {
+            height: 170px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img1 { background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092'); }
+        .img2 { background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38'); }
+        .img3 { background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe'); }
+
+        .food-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .food-content h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .food-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #ff6f3c;
+            font-size: 18px;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+           
+            color: rgb(99, 98, 98);
+            font-size: 13px;
+        }
+        nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tasty<span class="diff"> Bites</span></h1>
+        <p>Delicious food made with love</p>
+
+         <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="food-section">
+
+        <div class="food-card">
+            <div class="food-img img1"></div>
+            <div class="food-content">
+                <h2>Cheese Burger</h2>
+                <p>Juicy grilled burger with melted cheese and fresh veggies.</p>
+                <div class="price">₹199</div>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <div class="food-img img2"></div>
+            <div class="food-content">
+                <h2>Italian Pizza</h2>
+                <p>Classic pizza topped with olives, cheese and herbs.</p>
+                <div class="price">₹299</div>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <div class="food-img img3"></div>
+            <div class="food-content">
+                <h2>Healthy Salad</h2>
+                <p>Fresh vegetables mixed with light dressing.</p>
+                <div class="price">₹149</div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Tasty Bites | All Rights Reserved
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bloom & Bliss - Sign Up</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+    <style>
+        body {
+            background: url(beautiful-soft-pink-flowers-serene-pastel-landscape-dusk-gentle-dreamy-lighting-delicate-petals-glowing-427763931.webp);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff6699;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ffc0cb;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff85a2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ff4d88;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #ff4d88;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="signup-box">
+    <h2>Create Account 🌸</h2>
+
+    <form id="signupForm">
+        <input type="text" id="fullname" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="tel" id="phone" placeholder="Phone Number">
+        <input type="password" id="password" placeholder="Create Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+        <button type="submit">Sign Up 💖</button>
+        <p id="message" class="message"></p>
+    </form>
+
+    <div class="login-link">
+        Already have an account? 
+        <a href="ex_4.html">Login 🌷</a>
+    </div>
+</div>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let fullname = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let message = document.getElementById("message");
+
+    if(fullname === "" || email === "" || phone === "" || password === "" || confirmPassword === "") {
+        message.style.color = "red";
+        message.innerHTML = "Please fill all fields 🌷";
+    }
+    else if(password !== confirmPassword) {
+        message.style.color = "red";
+        message.innerHTML = "Passwords do not match 💔";
+    }
+    else {
+    message.style.color = "green";
+    message.innerHTML = "Account Created Successfully 🌸";
+    setTimeout(function() {
+        window.location.href = "ex3.html";
+    }, 1500);
+}
+
+});
+</script>
+
+</body>
+</html>

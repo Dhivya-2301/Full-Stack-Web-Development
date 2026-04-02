@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quote Generator</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:350px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#4facfe;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2f80ed;
+}
+
+#quote{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Random Quote Generator</h2>
+
+<button onclick="generateQuote()">New Quote</button>
+
+<p id="quote"></p>
+
+</div>
+
+<script>
+
+const quotes = [
+{ text:"Success is not final, failure is not fatal.", author:"Winston Churchill"},
+{ text:"Believe you can and you're halfway there.", author:"Theodore Roosevelt"},
+{ text:"Dream big and dare to fail.", author:"Norman Vaughan"},
+{ text:"Your time is limited, so don’t waste it.", author:"Steve Jobs"}
+];
+
+const getQuote = () => {
+return new Promise(resolve => {
+
+setTimeout(() => {
+
+const random = Math.floor(Math.random()*quotes.length);
+
+resolve(quotes[random]);
+
+},500);
+
+});
+};
+
+const generateQuote = async () => {
+
+const quoteData = await getQuote();
+
+const {text, author} = quoteData;
+
+document.getElementById("quote").innerHTML =
+`"${text}" <br> - ${author}`;
+
+};
+
+</script>
+
+</body>
+</html>

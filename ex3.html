@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bloom & Bliss - Flower Shop</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .home {
+            min-height: 100vh;
+            background-image:
+                linear-gradient(rgba(255,182,193,0.5), rgba(255,182,193,0.5)),
+                url("https://images.unsplash.com/photo-1525310072745-f49212b5ac6d");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        nav {
+            background: rgba(232, 117, 117, 0.6);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .logo span {
+            color: #fc4e77; 
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover,
+        .dropdown:hover .dropbtn {
+            color: #ffb6c1;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 120px;
+            top: 30px;
+            left: 0;
+            box-shadow: 0 0 8px gray;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background: #ffe0e9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .home-text {
+            text-align: center;
+            padding-top: 120px;
+            font-size: 40px;
+            text-shadow: 2px 2px 5px rgb(245, 43, 107);
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 80px 40px;
+        }
+
+        .about img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 0 10px black;
+        }
+
+        .about-text {
+            width: 45%;
+            font-size: 18px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        footer {
+            background-image: linear-gradient(rgba(255,182,193,0.5), rgba(255,182,193,0.5));
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="home">
+
+    <nav>
+        <div class="logo">
+            <span>Bloom</span> & Bliss
+        </div>
+
+        <div class="menu">
+            <a href="#">Home</a>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Flowers</a>
+                <div class="dropdown-content">
+                    <a href="#">Roses</a>
+                    <a href="#">Lilies</a>
+                    <a href="#">Tulips</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Books</a>
+                <div class="dropdown-content">
+                    <a href="#">Romantic</a>
+                    <a href="#">Thriller</a>
+                    <a href="#">Novel</a>
+                </div>
+            </div>
+
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="home-text">
+        Welcome to Bloom & Bliss 
+    </div>
+
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Flower Shop">
+
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+                At Bloom & Bliss, we create beautiful floral arrangements that bring joy and happiness.
+                Our flowers are handpicked fresh every day to ensure quality and freshness.
+            </p>
+            <p>
+                Whether it's a celebration, a gift, or a special moment, we have the perfect flowers
+                to make it memorable.
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Bloom & Bliss Flower Shop
+</footer>
+
+</body>
+</html>
